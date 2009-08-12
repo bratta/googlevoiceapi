@@ -1,0 +1,3 @@
+Make sure to copy example.rspec_config.yml to rspec_config.yml and 
+change the values to match your Google Voice account before running
+any of the specs. Otherwise the tests will always fail.

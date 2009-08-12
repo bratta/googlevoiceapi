@@ -1,0 +1,5 @@
+---
+username: YOURUSERNAME@gmail.com
+password: YOURPASSWORD
+remote_number:  '1235551234'  # Number to be called and receive text messages
+forward_number: '4057592718'  # A number on your Google Voice account to place calls
