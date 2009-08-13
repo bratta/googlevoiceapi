@@ -1,0 +1,83 @@
+= GoogleVoice::Api
+
+Gem for interacting with Google Voice (http://www.google.com/voice/)
+
+
+== Install
+
+  gem install bratta-googlevoiceapi --source http://gems.github.com
+
+
+== Usage
+
+This gem provides a class for your application, GoogleVoice::Api. This
+class can be initialized with your Google Account credentials provided you
+have access to the Google Voice. Then you can use your object to interact
+with the features of Google Voice, such as placing calls, sending text messages,
+and viewing account history.
+
+You create your object this way:
+
+  require 'googlevoiceapi'
+  api = GoogleVoice::Api.new('username@gmail.com', 'password)
+  
+To send a text message, you would do the following:
+
+  api.sms('1234567890', 'This is my text message')
+  
+The method will properly encode the message for you and send it to the 
+phone number you specify.
+
+To place a call, you would similarly do the following:
+
+  api.call('1234567890', '1235551234')
+  
+The first number is the number to call, and the second number is the
+forwarding number, a number on your Google Voice account that will 
+ring first before it places the call to your remote recipient.
+
+There is also a cancel() method that will cancel a pending call that
+has not been answered yet. To cancel a call in progress, just hang 
+up your phone (duh!).
+
+There are also methods that provide you access to your inbox, sms and 
+call history, voicemail, etc. The methods look like this:
+
+  xml_data = api.inbox_xml()
+  
+The available methods include: inbox_xml, starred_xml, all_xml, spam_xml, 
+trash_xml, voicemail_xml, sms_xml, trash_xml, recorded_xml, placed_xml, 
+received_xml, and missed_xml
+
+More information on the pseudo-API we have to work with currently with
+Google Voice can be found here: 
+
+  http://posttopic.com/topic/google-voice-add-on-development
+
+
+== Tests
+
+This gem provides a set of RSpec tests along with it, but since you 
+have to run the tests with a valid username/password, I have abstracted
+out any sensitive information into spec/rspec_config.yml. Copy the example
+file spec/example.rspec_config.yml over and make the necessary changes 
+before running the test suite with "rake spec" or else you won't get any
+passing tests.
+
+
+== License
+
+Copyright (c) 2009 Tim Gourley
+ 
+This program is free software: you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation, either version 3 of the License, or
+(at your option) any later version.
+
+This program is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License
+along with this program.  If not, see <http://www.gnu.org/licenses/>.
