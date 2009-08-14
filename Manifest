@@ -7,6 +7,5 @@ README.rdoc
 spec/example.rspec_config.yml
 spec/googlevoiceapi_spec.rb
 spec/README
-spec/rspec_config.yml
 spec/spec_helper.rb
 tasks/rspec.rake
