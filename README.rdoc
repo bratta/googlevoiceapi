@@ -19,7 +19,7 @@ and viewing account history.
 You create your object this way:
 
   require 'googlevoiceapi'
-  api = GoogleVoice::Api.new('username@gmail.com', 'password)
+  api = GoogleVoice::Api.new('username@gmail.com', 'password')
   
 To send a text message, you would do the following:
 
