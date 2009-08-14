@@ -2,7 +2,7 @@ require 'rubygems'
 require 'rake'
 require 'echoe'
 
-Echoe.new('googlevoiceapi', '0.1.0') do |p|
+Echoe.new('googlevoiceapi', '0.1.1') do |p|
   p.description    = "Ruby library for interacting with Google Voice"
   p.url            = "http://github.com/bratta/googlevoiceapi"
   p.author         = "Tim Gourley"
