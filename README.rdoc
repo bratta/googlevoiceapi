@@ -5,7 +5,11 @@ Gem for interacting with Google Voice (http://www.google.com/voice/)
 
 == Install
 
-  gem install bratta-googlevoiceapi --source http://gems.github.com
+  # If you haven't done so already
+  gem install gemcutter
+  gem tumble
+
+  gem install googlevoiceapi
 
 
 == Usage
