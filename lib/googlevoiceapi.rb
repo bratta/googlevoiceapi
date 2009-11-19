@@ -19,7 +19,7 @@ module GoogleVoice
     # Create a basic Mechanize agent, initial our objects, and
     # create our dynamic <function>_xml methods
     def initialize(email=nil, password=nil)
-      @agent = WWW::Mechanize.new { |agent| agent.user_agent_alias = 'Mac Safari' }
+      @agent = WWW::Mechanize.new
       @coder = HTMLEntities.new
       @email = email if !email.nil?
       @password = password if !password.nil?
@@ -33,7 +33,10 @@ module GoogleVoice
     # Most of the calls require a special authentication token called
     # _rnr_se that can be scraped from the page once logged in. 
     def login()
-      @agent.post("https://www.google.com/accounts/ServiceLoginAuth?service=grandcentral", :Email => @email, :Passwd => @password)
+      login_page = @agent.get("https://www.google.com/accounts/ServiceLogin?service=grandcentral")
+      login_page.forms.first.field_with(:name=>"Email").value = @email
+      login_page.forms.first.field_with(:name=>"Passwd").value = @password
+      agent.submit(login_page.forms.first)
       page = @agent.get('https://www.google.com/voice/')
       dialing_form = page.forms.find { |f| f.has_field?('_rnr_se') }
       raise InvalidLoginException, "Cannot login to Google Voice with #{@email}" unless dialing_form
