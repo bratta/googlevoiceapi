@@ -64,7 +64,7 @@ module GoogleVoice
       login unless logged_in?
       remote_number = validate_number(remote_number)
       forwarding_number = validate_number(forwarding_number)
-      @agent.post('https://www.google.com/voice/call/connect/', :outgoingNumber => remote_number, :forwardingNumber => forwarding_number, :subscriberNumber => 'undefined', :remember => '0', "_rnr_se" => @rnr_se)
+      @agent.post('https://www.google.com/voice/call/connect/', :outgoingNumber => remote_number, :forwardingNumber => forwarding_number, :phoneType => 2, :subscriberNumber => 'undefined', :remember => '0', "_rnr_se" => @rnr_se)
     end
     
     # Cancel the call in progress for this account. It does NOT hang up
