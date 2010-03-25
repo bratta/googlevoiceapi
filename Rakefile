@@ -1,16 +1,20 @@
 require 'rubygems'
 require 'rake'
-require 'echoe'
 
-Echoe.new('googlevoiceapi', '0.1.3') do |p|
-  p.description    = "Ruby library for interacting with Google Voice"
-  p.url            = "http://github.com/bratta/googlevoiceapi"
-  p.author         = "Tim Gourley"
-  p.email          = "tgourley@gmail.com"
-  p.ignore_pattern = ["tmp/*", "script/*"]
-  p.runtime_dependencies = ['htmlentities', 'mechanize']
-  p.development_dependencies = ['rake', 'rspec', 'echoe']
+begin
+  require 'jeweler'
+  Jeweler::Tasks.new do |gemspec|
+    gemspec.name = "googlevoiceapi"
+    gemspec.summary = "Ruby library for interacting with Google Voice"
+    gemspec.description = "Uses Mechanize to screen scrape Google Voice since there is no public API"
+    gemspec.email = "tgourley@gmail.com"
+    gemspec.homepage = "http://github.com/bratta/googlevoiceapi"
+    gemspec.authors = ["Tim Gourley"]
+    gemspec.add_dependency('htmlentities')
+    gemspec.add_dependency('mechanize')
+    gemspec.add_development_dependency('rake')
+    gemspec.add_development_dependency('rspec')    
+  end
+rescue LoadError
+  puts "Jeweler not available. Install it with: gem install jeweler"
 end
-
-Dir["#{File.dirname(__FILE__)}/tasks/*.rake"].sort.each { |ext| load ext }
-

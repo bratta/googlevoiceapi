@@ -1,5 +1,9 @@
 = GoogleVoiceApi Changelog
 
+== 0.1.4 3/25/2010
+
+Getting rid of Mechanize deprecation warning, switching to Jeweler.
+
 == 0.1.3 11/20/2009
 
 Fixed a bug preventing users from logging into Google Voice, thanks to jonfuller!

@@ -19,7 +19,7 @@ module GoogleVoice
     # Create a basic Mechanize agent, initial our objects, and
     # create our dynamic <function>_xml methods
     def initialize(email=nil, password=nil)
-      @agent = WWW::Mechanize.new
+      @agent = Mechanize.new
       @coder = HTMLEntities.new
       @email = email if !email.nil?
       @password = password if !password.nil?
