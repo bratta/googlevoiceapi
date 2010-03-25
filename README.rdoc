@@ -5,12 +5,7 @@ Gem for interacting with Google Voice (http://www.google.com/voice/)
 
 == Install
 
-  # If you haven't done so already
-  gem install gemcutter
-  gem tumble
-
   gem install googlevoiceapi
-
 
 == Usage
 
@@ -71,7 +66,7 @@ passing tests.
 
 == License
 
-Copyright (c) 2009 Tim Gourley
+Copyright (c) 2010 Tim Gourley
  
 This program is free software: you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by
