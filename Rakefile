@@ -6,7 +6,7 @@ begin
   Jeweler::Tasks.new do |gemspec|
     gemspec.name = "googlevoiceapi"
     gemspec.summary = "Ruby library for interacting with Google Voice"
-    gemspec.description = "Uses Mechanize to screen scrape Google Voice since there is no public API"
+    gemspec.description = "Uses Mechanize to screen-scrape Google Voice since there is no public API"
     gemspec.email = "tgourley@gmail.com"
     gemspec.homepage = "http://github.com/bratta/googlevoiceapi"
     gemspec.authors = ["Tim Gourley"]
