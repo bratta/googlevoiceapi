@@ -75,7 +75,7 @@ describe GoogleVoice::Api, " When dealing with XML data feeds" do
     @api = GoogleVoice::Api.new(GVConfig.username, GVConfig.password)
   end
   
-  %w{ inbox starred all spam trash voicemail sms trash recorded placed received missed }.each do |xml_action|
+  %w{ unread inbox starred all spam trash voicemail sms trash recorded placed received missed }.each do |xml_action|
     it "should return XML for #{xml_action} items" do
       xml_method = "#{xml_action}_xml".to_sym
       @api.send(xml_method).should_not == nil

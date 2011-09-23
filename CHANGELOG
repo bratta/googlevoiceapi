@@ -1,5 +1,9 @@
 = GoogleVoiceApi Changelog
 
+== 0.1.5 9/23/2011
+
+Adding unread xml info and updating to bundler/rvm.
+
 == 0.1.4 3/25/2010
 
 Getting rid of Mechanize deprecation warning, switching to Jeweler.
