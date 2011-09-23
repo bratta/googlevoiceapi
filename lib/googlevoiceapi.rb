@@ -101,7 +101,7 @@ module GoogleVoice
     # so it shouldn't matter in the long run.
     def init_xml_methods()
       (class << self; self; end).class_eval do
-        %w{ inbox starred all spam trash voicemail sms trash recorded placed received missed }.each do |method|
+        %w{ unread inbox starred all spam trash voicemail sms trash recorded placed received missed }.each do |method|
           define_method "#{method}_xml".to_sym do
             get_xml_document("https://www.google.com/voice/inbox/recent/#{method}")
           end
