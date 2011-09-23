@@ -2,6 +2,8 @@ require 'rubygems'
 require 'mechanize'
 require 'htmlentities'
 
+require 'googlevoiceapi/version'
+
 
 # This gem provides a Ruby API for working with Google Voice. Right now
 # there is no public API provided by Google, so we are relying on 
