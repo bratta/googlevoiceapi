@@ -2,7 +2,7 @@ require 'rubygems'
 require 'mechanize'
 require 'htmlentities'
 
-require 'googlevoiceapi/version'
+require File.dirname(__FILE__) + '/googlevoiceapi/version'
 
 
 # This gem provides a Ruby API for working with Google Voice. Right now
