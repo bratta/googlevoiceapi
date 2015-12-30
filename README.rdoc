@@ -5,6 +5,9 @@ Gem for interacting with Google Voice (http://www.google.com/voice/)
 == PLEASE NOTE
     This gem currently does not work due to changes in the way Google handles logins.
 
+    This code is now considered archival. Looking to use this code? Feel free to fork it,
+    fix it, publish it, and use as you wish.
+
 == Install
 
   gem install googlevoiceapi
