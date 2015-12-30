@@ -2,6 +2,8 @@
 
 Gem for interacting with Google Voice (http://www.google.com/voice/)
 
+== PLEASE NOTE
+    This gem currently does not work due to changes in the way Google handles logins.
 
 == Install
 
