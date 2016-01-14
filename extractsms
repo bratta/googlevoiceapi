@@ -1,0 +1,26 @@
+require 'googlevoiceapi'
+require 'json'
+require 'nokogiri'
+require 'rubygems'
+
+$api = GoogleVoice::Api.new("hodgeswt", "Aragorn1234")
+def getSms()
+	page = Nokogiri::HTML($api.inbox_xml())
+	msg = page.xpath("//span[@class='gc-message-sms-text']")
+	msgs = []
+	msg.each do |msgMsg|
+		msgs << msgMsg.text
+	end
+	from = page.xpath("//span[@class='gc-message-sms-from']")
+	froms = []
+	from.each do |fromMsg|
+		froms << fromMsg.text.gsub('\n', '')
+	end
+	smss = []
+	i = 0
+	while i < froms.length do
+		smss << [froms[i].gsub('\n', ''), msgs[i]]
+		i = i + 1
+	end
+	return smss
+end
